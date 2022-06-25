@@ -1,0 +1,224 @@
+heart_attack_analysis=read.csv(file.choose())
+heart_attack_analysis
+knitr::opts_chunk$set(echo = TRUE)
+heart_attack_analysis <- read.csv("C:/Users/Welcome/Desktop/Eda//heart.csv", sep = ',', header = TRUE)
+heart_attack_analysis
+?str()
+str(heart_attack_analysis)
+str(heart_attack_analysis)
+?summary()
+str(heart_attack_analysis$trtbps)
+symmary(heart_attack_analysis)
+summary(heart_attack_analysis)
+head(heart_attack_analysis)
+summary(heart_attack_analysis$oldpeak)
+head(heart_attack_analysis,n=10)
+tail(heart_attack_analysis)
+tail(heart_attack_analysis,n=9)
+dim(heart_attack_analysis)
+dim(heart_attack_analysis)
+name(heart_attack_analysis)
+names(heart_attack_analysis)
+class(heart_attack_analysis)
+names(heart_attack_analysis)
+colnames(heart_attack_analysis)
+colSums(heart_attack_analysis)
+min(heart_attack_analysis)
+max(heart_attack_analysis)
+max(heart_attack_analysis)
+median(heart_attack_analysis)
+mean(heart_attack_analysis)
+median(heart_attack_analysis$age)
+min(heart_attack_analysis)
+min(heart_attack_analysis$age)
+max(heart_attack_analysis)
+max(heart_attack_analysis$age)
+mean(heart_attack_analysis$age)
+mode(heart_attack_analysis$age)
+?rank
+heart_attack_analysis$cp
+heart_attack_analysis$age
+sort(heart_attack_analysis)
+sort(heart_attack_analysis$age)
+?sort()
+sort(heart_attack_analysis$age,decreasing=TRUE)
+rank(heart_attack_analysis$age)
+order(heart_attack_analysis$age)
+rev(sort(heart_attack_analysis$age))
+heart_attack_analysis[4,3]
+heart_attack_analysis[4,]
+heart_attack_analysis[,3]
+a<-as.character(heart_attack_analysis[4,3])
+a<-as.character(heart_attack_analysis[4,3])
+a
+a<-as.character(heart_attack_analysis$fbs)
+a
+b<-as.character(heart_attack_analysis$fbs)
+b
+a<-as.character(heart_attack_analysis[4,3])
+a
+as.factor(b)
+as.factor(a)
+as.factor(b)
+as.numerical(b)
+as.numeric(b)
+as.integer(b)
+typeof(b)
+as.integer(b)
+typeof(b)
+typeof(b)
+class(b)
+typeof(b)
+b<-as.integer(b)
+b<-as.integer(b)
+b
+b<-as.integer(b)
+b
+typeof(b)
+heart_attack_analysis[4,:4]
+heart_attack_analysis[4,3:4]
+heart_attack_analysis[4,3:3]
+heart_attack_analysis[4,3:5]
+heart_attack_analysis[c(1,3,5,7)]
+heart_attack_analysis[c(1,3,5,7),-4]
+attach(heart_attack_analysis)
+?attach
+c<-as.matrix(heart_attack_analysis$cp)
+c
+c<-as.matrix(heart_attack_analysis$cp)
+c
+c<-as.list(heart_attack_analysis$cp)
+c
+c<-as.matrix(heart_attack_analysis$cp)
+c
+d<-as.list(heart_attack_analysis$cp)
+d
+c<-as.matrix(heart_attack_analysis$cp)
+c
+class(c)
+d<-as.list(heart_attack_analysis$cp)
+d
+class(d)
+c<-as.list.data.frame(c)
+c
+class(c)
+c<-as.data.frame(c)
+c
+class(c)
+c<-as.data.frame(c)
+class(c)
+c<-as.list(c)
+class(c)
+c<-as.data.frame(c)
+class(c)
+c
+c<-as.list(c)
+class(c)
+c
+c<-as.data.frame(c)
+class(c)
+c<-as.list(c)
+class(c)
+c
+c<-as.data.frame(c)
+class(c)
+c
+c<-as.list(c)
+class(c)
+c
+c<-as.data.frame(c)
+class(c)
+c
+c<-as.matrix(c)
+class(c)
+c
+length(heart_attack_analysis)
+dimnames(heart_attack_analysis)
+dimnames(heart_attack_analysis)
+sd(heart_attack_analysis)
+sd(heart_attack_analysis$restecg)
+summary(heart_attack_analysis)
+quantile(heart_attack_analysis)
+quantile(heart_attack_analysis,c(.25,.5,.75))
+?quantile
+quantile(heart_attack_analysis$age,c(.25,.5,.75))
+quantile(heart_attack_analysis$age)
+quantile(heart_attack_analysis$age,c(.3,.4,.7))
+sqrt(heart_attack_analysis[1:20,4])
+sqrt(heart_attack_analysis[1:30,4])
+log(heart_attack_analysis[1:30,4])
+sin(heart_attack_analysis[1:30,4])
+e(heart_attack_analysis[1:30,4])
+sinh(heart_attack_analysis[1:30,4])
+plot(heart_attack_analysis$restecg)
+boxplot(heart_attack_analysis$restecg)
+boxplot(heart_attack_analysis$restecg)
+?fivenum
+boxplot(heart_attack_analysis$restecg)
+boxplot(heart_attack_analysis$thall)
+plot(heart_attack_analysis$thall)
+fivenum(heart_attack_analysis$restecg)
+cumsum(heart_attack_analysis$restecg)
+cummax(heart_attack_analysis$restecg)
+cummin(heart_attack_analysis$restecg)
+?cumprod
+cumprod(heart_attack_analysis$restecg)
+levels(heart_attack_analysis)
+?levels
+heart_attack_analysis[(heart_attack_analysis$age>54)]
+heart_attack_analysis[(heart_attack_analysis$age>54),]
+heart_attack_analysis[(heart_attack_analysis$age>43 && heart_attack_analysis<66),]
+plot(heart_attack_analysis$age,heart_attack_analysis$chol,type = '1')
+plot(heart_attack_analysis$age,heart_attack_analysis$chol,type = '27')
+plot(heart_attack_analysis$age,heart_attack_analysis$chol,type = '29')
+plot(heart_attack_analysis$cp,heart_attack_analysis$fbs,type = '1')
+plot(heart_attack_analysis$sex,heart_attack_analysis$fbs,type = '1')
+?plum
+?spread
+heart_attack_analysis[(heart_attack_analysis$age>43 && heart_attack_analysis<54),]
+library(gcookbook)
+?spread
+?gather
+dimnames(heart_attack_analysis)
+library(ggplot2)
+install.packages(ggplot2)
+install.packages(ggplot)
+ls()
+library(gcookbook)
+ggplot(heart_attack_analysis,aes(x=age,y=chol)+ geom_col)
+library(ggplot2)
+install.packages("ggplot2")
+library(ggplot2)
+ggplot(heart_attack_analysis,aes(x=age,y=chol)+ geom_col)
+ggplot(heart_attack_analysis,aes(x=age,y=sex)+ geom_col)
+ggplot(heart_attack_analysis,aes(x=cp,y=sex)+ geom_col)
+ggplot(pg_mean,aes(x=group,y=weight)+ geom_col)
+pg_mean
+ggplot(pg_mean,aes(x=group,y=weight)+ geom_col()
+geom_col()
+ggplot(pg_mean,aes(x=group,y=weight))+ geom_col()
+ggplot(heart_attack_analysis,aes(x=cp,y=sex))+ geom_col()
+heart_attack_analysis$sex
+heart_attack_analysis$cp
+c<-as.data.frame(c)
+class(c)
+c
+c<-as.list(c)
+class(c)
+c
+ggplot(heart_attack_analysis,aes(x=cp,y=sex))+ geom_col()
+ggplot(heart_attack_analysis,aes(x=cp))+ geom_bar()
+ggplot(heart_attack_analysis,aes(x=cp,y=sex))+ geom_point()
+ggplot(heart_attack_analysis,aes(x=cp,y=age))+ geom_point()
+ggplot(heart_attack_analysis,aes(x=cp,y=sex))+ geom_line()
+ggplot(heart_attack_analysis,aes(x=chol,y=age))+ geom_line()
+ggplot(heart_attack_analysis,aes(x=chol,y=trtbps))+ geom_area()
+ggplot(heart_attack_analysis,aes(x=chol,y=age))+ geom_point()
+ggplot(heart_attack_analysis,aes(x=thalachh))+ geom_histogram()
+ggplot(heart_attack_analysis,aes(x=age))+ geom_bar()
+View(heart_attack_analysis)
+ggplot(heart_attack_analysis,aes(x=cp))+ geom_bar()
+ggplot(heart_attack_analysis,aes(x=age))+ geom_density()
+ggplot(heart_attack_analysis,aes(x=factor(chol),y=trtbps))+ geom_area()
+ggplot(heart_attack_analysis,aes(x=factor(chol),y=trtbps))+ geom_boxplot()
+savehistory("C:/Users/Welcome/Desktop/Eda/code.Rhistory")
