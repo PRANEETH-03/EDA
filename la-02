@@ -1,0 +1,111 @@
+heart_attack_analysis
+plot(heart_attack_analysis$age,heart_attack_analysis$fbs,type="l")
+ggplot(heart_attack_analysis,aes(x=age,y=fbs))+ geom_line()
+ggplot(heart_attack_analysis,aes(x=age,y=fbs))+geom_line()+geom_point()
+ggplot(heart_attack_analysis, aes(x = age, y = sex, colour = cp)) +
+geom_line()
+ggplot(heart_attack_analysis, aes(x = age, y = sex, colour = cp)) +
+geom_line()+xlim(40,67)
+barplot(heart_attack_analysis$oldpeak,heart_attack_analysis$output)
+ggplot(heart_attack_analysis,aes(x=age))+ geom_bar()
+ggplot(heart_attack_analysis,aes(x=factor(age)))+ geom_bar()
+ggplot(heart_attack_analysis,aes(x=factor(age)))+ geom_bar(fill="lightblue",colour="black")
+ggplot(heart_attack_analysis,aes(x=cp,y=age))+ geom_col(fill="lightblue")
+ggplot(heart_attack_analysis, aes(x = sex, y = age, fill = cp)) +
+geom_col(position = "dodge")
+ggplot(heart_attack_analysis, aes(x = age, y = oldpeak, fill = sex)) +
+geom_col(position = "identity")
+ggplot(heart_attack_analysis, aes(x = interaction(cp, restecg), y = age)) +
+geom_col() +
+geom_text(aes(label = age), vjust = -1.5, colour = "white")
+hist(x=heart_attack_analysis$trtbps)
+ggplot(heart_attack_analysis,aes(x=trtbps))+ geom_histogram()
+ggplot(heart_attack_analysis,aes(x=trtbps))+ geom_histogram(fill="white",colour="black")
+ggplot(heart_attack_analysis, aes(x = trtbps)) + geom_histogram(binwidth = 4)
+ggplot(heart_attack_analysis,aes(x=age))+geom_histogram(fill="white",colour="black")+facet_grid(sex ~ .)
+library(dplyr)
+h<-heart_attack_analysis
+h$sex<-recode_factor(h$sex,'0'='MALE','1'='FEMALE')
+ggplot(h,aes(x=age))+geom_histogram(fill="white",colour="black")+facet_grid(sex ~ .)
+ggplot(h,aes(x=age))+geom_histogram(fill="white",colour="black")+facet_grid(cp ~ .)
+ggplot(h,aes(x=age))+geom_histogram(fill="white",colour="black")+facet_grid(cp ~ .,scales="free")
+ggplot(h,aes(x=age,fill=sex))+ geom_histogram(position = "identity", alpha = 0.4)
+boxplot(heart_attack_analysis)
+boxplot(heart_attack_analysis$chol,heart_attack_analysis$cp)
+ggplot(heart_attack_analysis,aes(x=chol,y=age))+geom_boxplot()
+ggplot(heart_attack_analysis, aes(x = interaction(sex, cp), y = age)) +
+geom_boxplot()
+curve(x^3-5*x,from = -4,to=4)
+ggplot(heart_attack_analysis,aes(x=age))+geom_density()
+ggplot(heart_attack_analysis, aes(x = age)) +
+geom_line(stat = "density") +
+geom_line(stat = "density", adjust = .25, colour = "red") +
+geom_line(stat = "density", adjust = 2, colour = "blue")
+ggplot(heart_attack_analysis, aes(x = age)) +
+geom_density(fill = "blue", alpha = .2) +
+xlim(35, 70)
+ggplot(heart_attack_analysis, aes(x = age, y = ..density..)) +
+geom_histogram(fill = "cornsilk", colour = "grey60", size = .2) +
+geom_density() +
+xlim(35, 80)
+e <- heart_attack_analysis %>%
+mutate(sex = as.factor(sex))
+ggplot(e,aes(x=age,colour=sex))+geom_density()
+ggplot(e,aes(x=age,fill=sex))+geom_density(alpha=0.4)
+ggplot(h, aes(x = age)) +
+geom_density() +
+facet_grid(sex ~ .)
+ggplot(heart_attack_analysis, aes(x = age, y = ..density..)) +
+geom_histogram(fill = "cornsilk", colour = "grey60", size = .2) +
+geom_density() +facet_grid(sex ~ .)
+ggplot(heart_attack_analysis,aes(x=trtbps))+geom_freqpoly()
+ggplot(faithful, aes(x = waiting)) + geom_freqpoly(binwidth = 4)
+ggplot(heart_attack_analysis,aes(x=factor(cp),y=age))+geom_boxplot()
+ggplot(heart_attack_analysis,aes(x=factor(cp),y=age))+geom_boxplot(width=.4)
+ggplot(heart_attack_analysis,aes(x=factor(cp),y=age))+geom_boxplot(outlier.shape = 20,outlier.size = 1.5)
+ggplot(heart_attack_analysis,aes(x=factor(cp),y=age))+geom_boxplot(notch = TRUE)
+ggplot(heart_attack_analysis, aes(x = factor(cp), y = age)) +
+geom_boxplot() +
+stat_summary(fun.y = "mean", geom = "point", shape = 23, size = 3,
+fill = "white")
+ggplot(heart_attack_analysis,aes(x=factor(cp),y=age))+geom_violin()
+ggplot(heart_attack_analysis,aes(x=factor(cp),y=age))+geom_violin(trim = FALSE)
+ggplot(heart_attack_analysis,aes(x=factor(cp),y=age))+geom_violin(adjust=3)
+ggplot(heart_attack_analysis,aes(x=factor(cp),y=age))+ geom_violin() +
+geom_boxplot(width = .1, fill = "black", outlier.colour = NA) +
+stat_summary(fun.y = median, geom = "point", fill = "white", shape = 21,
+size = 2.5)
+ggplot(heart_attack_analysis,aes(x=oldpeak))+geom_dotplot()
+ggplot(heart_attack_analysis,aes(x=oldpeak))+geom_dotplot(binwidth = .10)+geom_rug()
+ggplot(heart_attack_analysis,aes(x=oldpeak))+geom_dotplot(binwidth = .10,stackdir = "center")+geom_rug()
+ggplot(heart_attack_analysis,aes(x=oldpeak))+geom_dotplot(binwidth = .10,stackdir = "centerwhole")+geom_rug()
+ggplot(h, aes(x = sex, y = age)) +
+geom_dotplot(binaxis = "y", binwidth = .5, stackdir = "center")
+ggplot(h, aes(x = sex, y = age)) +
+geom_boxplot(outlier.colour = NA, width = .4) +
+geom_dotplot(binaxis = "y", binwidth = 1, stackdir = "center", fill = NA)
+ggplot(h, aes(x = sex, y = age)) +
+geom_boxplot(aes(x = as.numeric(sex) + .2, group = sex), width = .25) +
+geom_dotplot(
+aes(x = as.numeric(sex) - .2, group = sex),
+binaxis = "y",
+binwidth = .5,
+stackdir = "center"
+) +
+scale_x_continuous(
+breaks = 1:nlevels(h$sex),
+labels = levels(h$sex)
+)
+ggplot(heart_attack_analysis,aes(x=oldpeak,y=age))+geom_point()+stat_density2d()
+ggplot(heart_attack_analysis,aes(x=oldpeak,y=age))+stat_density2d(aes(colour = ..level..))
+ggplot(heart_attack_analysis,aes(x=oldpeak,y=age))+stat_density2d(aes(fill = ..density..), geom = "raster", contour = FALSE)
+ggplot(heart_attack_analysis,aes(x=oldpeak,y=age))+geom_point() +
+stat_density2d(aes(alpha = ..density..), geom = "tile", contour = FALSE)
+library(corrplot)
+hea<-cor(heart_attack_analysis)
+corrplot(hea)
+corrplot(hea, method = "shade", shade.col = NA, tl.col = "black", tl.srt = 45)
+col <- colorRampPalette(c("#BB4444", "#EE9988", "#FFFFFF", "#77AADD", "#4477AA"))
+corrplot(hea, method = "shade", shade.col = NA, tl.col = "black", tl.srt = 45,
+col = col(200), addCoef.col = "black", cl.pos = "n", order = "AOE")
+savehistory("~/la2.Rhistory")
